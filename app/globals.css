@@ -4,70 +4,72 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  /* Cosmic Night Light Mode (fallback) */
   --background: oklch(0.98 0 0);
   --foreground: oklch(0.25 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.25 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.25 0 0);
-  --primary: oklch(0.35 0.05 240);
+  --primary: oklch(0.55 0.20 285);
   --primary-foreground: oklch(0.98 0 0);
   --secondary: oklch(0.95 0 0);
-  --secondary-foreground: oklch(0.35 0 0);
+  --secondary-foreground: oklch(0.25 0 0);
   --muted: oklch(0.96 0 0);
   --muted-foreground: oklch(0.55 0 0);
-  --accent: oklch(0.58 0.18 35);
+  --accent: oklch(0.62 0.22 290);
   --accent-foreground: oklch(0.98 0 0);
   --destructive: oklch(0.55 0.22 25);
   --destructive-foreground: oklch(0.98 0 0);
   --border: oklch(0.92 0 0);
   --input: oklch(0.92 0 0);
-  --ring: oklch(0.35 0.05 240);
-  --status-em-dia: oklch(0.65 0.15 145);
+  --ring: oklch(0.55 0.20 285);
+  --status-em-dia: oklch(0.62 0.18 165);
   --status-inadimplente: oklch(0.55 0.18 25);
-  --status-quitado: oklch(0.50 0.08 240);
+  --status-quitado: oklch(0.55 0.20 285);
   --radius: 0.5rem;
   --sidebar: oklch(0.98 0 0);
   --sidebar-foreground: oklch(0.40 0 0);
-  --sidebar-primary: oklch(0.35 0.05 240);
+  --sidebar-primary: oklch(0.55 0.20 285);
   --sidebar-primary-foreground: oklch(0.98 0 0);
   --sidebar-accent: oklch(0.94 0 0);
-  --sidebar-accent-foreground: oklch(0.35 0 0);
+  --sidebar-accent-foreground: oklch(0.25 0 0);
   --sidebar-border: oklch(0.90 0 0);
-  --sidebar-ring: oklch(0.35 0.05 240);
+  --sidebar-ring: oklch(0.55 0.20 285);
 }
 
 .dark {
-  --background: oklch(0.96 0.005 275);
-  --foreground: oklch(0.25 0.01 275);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.25 0.01 275);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.25 0.01 275);
-  --primary: oklch(0.55 0.20 285);
-  --primary-foreground: oklch(0.98 0 0);
-  --secondary: oklch(0.94 0.005 275);
-  --secondary-foreground: oklch(0.25 0.01 275);
-  --muted: oklch(0.94 0.005 275);
-  --muted-foreground: oklch(0.55 0.01 275);
-  --accent: oklch(0.55 0.20 285);
-  --accent-foreground: oklch(0.98 0 0);
-  --destructive: oklch(0.55 0.18 25);
+  /* Cosmic Night - Deep Purple & Cyan Theme */
+  --background: oklch(0.12 0.08 275);
+  --foreground: oklch(0.92 0.06 290);
+  --card: oklch(0.18 0.08 280);
+  --card-foreground: oklch(0.90 0.07 290);
+  --popover: oklch(0.18 0.08 280);
+  --popover-foreground: oklch(0.90 0.07 290);
+  --primary: oklch(0.62 0.22 290);
+  --primary-foreground: oklch(0.12 0.08 275);
+  --secondary: oklch(0.25 0.08 280);
+  --secondary-foreground: oklch(0.92 0.06 290);
+  --muted: oklch(0.22 0.05 280);
+  --muted-foreground: oklch(0.65 0.04 280);
+  --accent: oklch(0.65 0.24 200);
+  --accent-foreground: oklch(0.12 0.08 275);
+  --destructive: oklch(0.60 0.22 25);
   --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.90 0.005 275);
-  --input: oklch(0.94 0.005 275);
-  --ring: oklch(0.55 0.20 285);
-  --status-em-dia: oklch(0.60 0.15 155);
-  --status-inadimplente: oklch(0.55 0.18 25);
-  --status-quitado: oklch(0.55 0.20 285);
-  --sidebar: oklch(0.28 0.12 285);
-  --sidebar-foreground: oklch(0.85 0.05 285);
-  --sidebar-primary: oklch(0.55 0.20 285);
+  --border: oklch(0.25 0.08 280);
+  --input: oklch(0.18 0.08 280);
+  --ring: oklch(0.65 0.24 200);
+  --status-em-dia: oklch(0.65 0.18 165);
+  --status-inadimplente: oklch(0.60 0.20 25);
+  --status-quitado: oklch(0.62 0.22 290);
+  --sidebar: oklch(0.15 0.08 280);
+  --sidebar-foreground: oklch(0.88 0.08 290);
+  --sidebar-primary: oklch(0.62 0.22 290);
   --sidebar-primary-foreground: oklch(0.98 0 0);
-  --sidebar-accent: oklch(0.35 0.12 285);
-  --sidebar-accent-foreground: oklch(0.90 0.05 285);
-  --sidebar-border: oklch(0.32 0.12 285);
-  --sidebar-ring: oklch(0.55 0.20 285);
+  --sidebar-accent: oklch(0.65 0.24 200);
+  --sidebar-accent-foreground: oklch(0.15 0.08 280);
+  --sidebar-border: oklch(0.22 0.08 280);
+  --sidebar-ring: oklch(0.65 0.24 200);
 }
 
 @theme inline {
