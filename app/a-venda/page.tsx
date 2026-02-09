@@ -9,14 +9,14 @@ import { Search, Plus, SlidersHorizontal, Bell, HelpCircle, ChevronDown, MoreHor
 
 // Mock data
 const vehicles: Vehicle[] = [
-  { id: '1', model: 'Toyota Corolla 2022', plate: 'PZZ8E53', year: 2022, status: 'a-venda', type: 'carro', image: '/vehicles/toyota-corolla.jpg' },
-  { id: '2', model: 'Ford Ranger 2020', plate: 'XY21G56', year: 2020, status: 'a-venda', type: 'carro', image: '/vehicles/ford-ranger.jpg' },
-  { id: '3', model: 'Volkswagen Gol 2017', plate: 'HTL5B21', year: 2017, status: 'a-venda', type: 'carro', image: '/vehicles/vw-gol.jpg' },
-  { id: '4', model: 'Honda Civic 2018', plate: 'GHT9D31', year: 2018, status: 'a-venda', type: 'carro', image: '/vehicles/honda-civic.jpg' },
-  { id: '5', model: 'Honda CB 3000', plate: 'FGD2H12', year: 2023, status: 'a-venda', type: 'moto', image: '/vehicles/honda-cb-3000.jpg', buyers: 2 },
-  { id: '6', model: 'Yamaha Fazer 2021', plate: 'HJL7K21', year: 2021, status: 'a-venda', type: 'moto', image: '/vehicles/yamaha-fazer.jpg', buyers: 2 },
-  { id: '7', model: 'Honda Biz 2020', plate: 'QWE8N20', year: 2020, status: 'a-venda', type: 'moto', image: '/vehicles/honda-biz.jpg', buyers: 2 },
-  { id: '8', model: 'Yamaha XTZ 2018', plate: 'BNC6C34', year: 2018, status: 'a-venda', type: 'moto', image: '/vehicles/yamaha-xtz.jpg', buyers: 2 },
+  { id: '1', model: 'Toyota Corolla 2022', plate: 'PZZ8E53', year: 2022, status: 'a-venda', type: 'carro' },
+  { id: '2', model: 'Ford Ranger 2020', plate: 'XY21G56', year: 2020, status: 'a-venda', type: 'carro' },
+  { id: '3', model: 'Volkswagen Gol 2017', plate: 'HTL5B21', year: 2017, status: 'a-venda', type: 'carro' },
+  { id: '4', model: 'Honda Civic 2018', plate: 'GHT9D31', year: 2018, status: 'a-venda', type: 'carro' },
+  { id: '5', model: 'Honda CB 3000', plate: 'FGD2H12', year: 2023, status: 'a-venda', type: 'moto', buyers: 2 },
+  { id: '6', model: 'Yamaha Fazer 2021', plate: 'HJL7K21', year: 2021, status: 'a-venda', type: 'moto', buyers: 2 },
+  { id: '7', model: 'Honda Biz 2020', plate: 'QWE8N20', year: 2020, status: 'a-venda', type: 'moto', buyers: 2 },
+  { id: '8', model: 'Yamaha XTZ 2018', plate: 'BNC6C34', year: 2018, status: 'a-venda', type: 'moto', buyers: 2 },
 ]
 
 export default function AVendaPage() {
@@ -56,7 +56,6 @@ export default function AVendaPage() {
               <div className="h-6 w-px bg-border" />
               <Button variant="ghost" className="gap-2 h-9">
                 <Avatar className="h-6 w-6">
-                  <AvatarImage src="https://api.dicebear.com/7.x/avataaars/svg?seed=Warren" alt="Warren Paz" />
                   <AvatarFallback>{'WP'}</AvatarFallback>
                 </Avatar>
                 <span className="text-sm">{'Warien Paz'}</span>

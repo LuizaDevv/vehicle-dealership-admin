@@ -89,7 +89,6 @@ export function AppSidebar() {
         {/* User Avatar */}
         <div className="p-1">
           <Avatar className="h-10 w-10 border border-white/20">
-            <AvatarImage src="https://api.dicebear.com/7.x/avataaars/svg?seed=Camila" alt="Camila" />
             <AvatarFallback className="bg-primary text-white text-xs font-semibold">CM</AvatarFallback>
           </Avatar>
         </div>

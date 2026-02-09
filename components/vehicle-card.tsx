@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -15,7 +14,6 @@ export interface Vehicle {
   status: 'a-venda' | 'em-dia' | 'inadimplente' | 'quitado'
   type: 'carro' | 'moto'
   client?: string
-  image?: string
   buyers?: number
 }
 
@@ -83,18 +81,7 @@ export function VehicleCard({ vehicle, showClient = false, href }: VehicleCardPr
             </div>
           </div>
 
-          {/* Image */}
-          {vehicle.image && (
-            <div className="relative h-40 w-full bg-muted/30">
-              <Image
-                src={vehicle.image || "/placeholder.svg"}
-                alt={vehicle.model}
-                fill
-                className="object-contain p-4"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              />
-            </div>
-          )}
+
 
           {/* Footer Actions */}
           <div className="flex items-center gap-1 border-t border-border/50 p-2 px-3">
