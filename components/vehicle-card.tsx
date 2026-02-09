@@ -15,6 +15,7 @@ export interface Vehicle {
   type: 'carro' | 'moto'
   client?: string
   buyers?: number
+  price?: number
 }
 
 
@@ -22,6 +23,7 @@ interface VehicleCardProps {
   vehicle: Vehicle
   showClient?: boolean
   href?: string
+  onSell?: (vehicle: Vehicle) => void
 }
 
 
@@ -45,56 +47,68 @@ const statusConfig = {
 }
 
 
-export function VehicleCard({ vehicle, showClient = false, href }: VehicleCardProps) {
+export function VehicleCard({ vehicle, showClient = false, href, onSell }: VehicleCardProps) {
   const statusInfo = statusConfig[vehicle.status]
   
   const cardContent = (
     <Card className={cn(
-      'overflow-hidden border transition-all hover:shadow-lg',
+      'overflow-hidden border transition-all hover:shadow-lg bg-card/50',
       href && 'cursor-pointer hover:border-primary/30'
     )}>
-      <CardContent className="p-0">
-        <div className="flex flex-col">
+      <CardContent className="p-4">
+        <div className="flex flex-col gap-3">
           {/* Header */}
-          <div className="flex items-start justify-between p-4 pb-3">
+          <div className="flex items-start justify-between">
             <div className="flex-1">
-              <h3 className="font-semibold text-foreground">{vehicle.model}</h3>
-              <div className="mt-1 flex items-center gap-2 text-sm text-muted-foreground">
-                <span className="font-mono text-xs">{vehicle.plate}</span>
-                {vehicle.buyers && (
-                  <>
-                    <span className="flex items-center gap-1">
-                      <Users className="h-3 w-3" />
-                      {vehicle.buyers}
-                    </span>
-                  </>
-                )}
+              <h3 className="font-semibold text-foreground text-base">{vehicle.model}</h3>
+              <div className="mt-1 flex items-center gap-2">
+                <span className="font-mono text-xs text-muted-foreground">{vehicle.plate}</span>
               </div>
             </div>
-            <div className="flex items-center gap-1">
-              <Badge variant="outline" className={cn('text-xs font-medium border', statusInfo.className)}>
-                {statusInfo.label}
-              </Badge>
-              <Button variant="ghost" size="icon" className="h-8 w-8 text-muted-foreground">
-                <MoreVertical className="h-4 w-4" />
-              </Button>
-            </div>
+            <Badge variant="outline" className={cn('text-xs font-medium border', statusInfo.className)}>
+              {statusInfo.label}
+            </Badge>
           </div>
 
-
+          {/* Price */}
+          {vehicle.price && (
+            <div className="text-sm font-semibold text-foreground">
+              {'R$ '}{(vehicle.price / 1000).toFixed(0)}{'.000'}
+            </div>
+          )}
 
           {/* Footer Actions */}
-          <div className="flex items-center gap-1 border-t border-border/50 p-2 px-3">
-            <Button variant="ghost" size="icon" className="h-8 w-8 text-muted-foreground hover:text-foreground">
-              <FileText className="h-4 w-4" />
+          <div className="flex items-center gap-2 pt-2 border-t border-border/30">
+            <Button
+              variant="ghost"
+              size="sm"
+              className="h-auto p-0 hover:bg-transparent text-foreground gap-1 flex-1 justify-start"
+              onClick={(e) => {
+                e.preventDefault()
+                e.stopPropagation()
+                onSell?.(vehicle)
+              }}
+            >
+              <FileText className="h-4 w-4 text-muted-foreground" />
+              <span className="text-sm font-medium">{'Vender'}</span>
             </Button>
-            <Button variant="ghost" size="icon" className="h-8 w-8 text-muted-foreground hover:text-foreground">
-              <FileCheck className="h-4 w-4" />
-            </Button>
-            <Button variant="ghost" size="icon" className="h-8 w-8 text-muted-foreground hover:text-foreground">
-              <FileText className="h-4 w-4" />
-            </Button>
-            <div className="ml-auto text-xs text-muted-foreground">{'•••'}</div>
+            <div className="ml-auto">
+              <Button 
+                variant="ghost" 
+                size="icon" 
+                className="h-6 w-6 text-muted-foreground hover:text-destructive"
+                onClick={(e) => {
+                  e.preventDefault()
+                  e.stopPropagation()
+                }}
+              >
+                <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <polyline points="3 6 5 4 21 4 23 6 20 20a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"></polyline>
+                  <line x1="10" y1="11" x2="10" y2="17"></line>
+                  <line x1="14" y1="11" x2="14" y2="17"></line>
+                </svg>
+              </Button>
+            </div>
           </div>
         </div>
       </CardContent>

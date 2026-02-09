@@ -20,9 +20,18 @@ const vehicles: Vehicle[] = [
 ]
 
 export default function AVendaPage() {
+  const [showAddModal, setShowAddModal] = useState(false)
+  const [showSellModal, setShowSellModal] = useState(false)
+  const [selectedVehicle, setSelectedVehicle] = useState<Vehicle | null>(null)
+
   const carros = vehicles.filter(v => v.type === 'carro')
   const motos = vehicles.filter(v => v.type === 'moto')
   const totalVehicles = vehicles.length
+
+  const handleSellClick = (vehicle: Vehicle) => {
+    setSelectedVehicle(vehicle)
+    setShowSellModal(true)
+  }
 
   return (
     <div className="flex min-h-screen bg-background">
@@ -76,7 +85,10 @@ export default function AVendaPage() {
                   <SlidersHorizontal className="h-4 w-4" />
                 </Button>
               </div>
-              <Button className="gap-2 bg-primary hover:bg-primary/90">
+              <Button 
+                className="gap-2 bg-primary hover:bg-primary/90"
+                onClick={() => setShowAddModal(true)}
+              >
                 <Plus className="h-4 w-4" />
                 {'Novo Veículo'}
               </Button>
@@ -107,6 +119,7 @@ export default function AVendaPage() {
                       key={vehicle.id}
                       vehicle={vehicle}
                       href={`/veiculo/${vehicle.id}`}
+                      onSell={handleSellClick}
                     />
                   ))}
                 </div>
@@ -135,6 +148,7 @@ export default function AVendaPage() {
                       key={vehicle.id}
                       vehicle={vehicle}
                       href={`/veiculo/${vehicle.id}`}
+                      onSell={handleSellClick}
                     />
                   ))}
                 </div>
@@ -268,6 +282,19 @@ export default function AVendaPage() {
           </aside>
         </div>
       </main>
+
+      <AddVehicleModal 
+        open={showAddModal}
+        onOpenChange={setShowAddModal}
+      />
+
+      {selectedVehicle && (
+        <SellVehicleModal 
+          vehicle={selectedVehicle}
+          open={showSellModal}
+          onOpenChange={setShowSellModal}
+        />
+      )}
     </div>
   )
 }
