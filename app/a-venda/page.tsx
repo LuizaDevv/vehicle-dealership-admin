@@ -12,14 +12,14 @@ import { Search, Plus, SlidersHorizontal, Bell, HelpCircle, ChevronDown, MoreHor
 
 // Mock data
 const vehicles: Vehicle[] = [
-  { id: '1', model: 'Toyota Corolla 2022', plate: 'PZZ8E53', year: 2022, status: 'a-venda', type: 'carro' },
-  { id: '2', model: 'Ford Ranger 2020', plate: 'XY21G56', year: 2020, status: 'a-venda', type: 'carro' },
-  { id: '3', model: 'Volkswagen Gol 2017', plate: 'HTL5B21', year: 2017, status: 'a-venda', type: 'carro' },
-  { id: '4', model: 'Honda Civic 2018', plate: 'GHT9D31', year: 2018, status: 'a-venda', type: 'carro' },
-  { id: '5', model: 'Honda CB 3000', plate: 'FGD2H12', year: 2023, status: 'a-venda', type: 'moto', buyers: 2 },
-  { id: '6', model: 'Yamaha Fazer 2021', plate: 'HJL7K21', year: 2021, status: 'a-venda', type: 'moto', buyers: 2 },
-  { id: '7', model: 'Honda Biz 2020', plate: 'QWE8N20', year: 2020, status: 'a-venda', type: 'moto', buyers: 2 },
-  { id: '8', model: 'Yamaha XTZ 2018', plate: 'BNC6C34', year: 2018, status: 'a-venda', type: 'moto', buyers: 2 },
+  { id: '1', model: 'Toyota Corolla 2022', plate: 'PZZ8E53', year: 2022, status: 'a-venda', type: 'carro', price: 30000 },
+  { id: '2', model: 'Ford Ranger 2020', plate: 'XY21G56', year: 2020, status: 'a-venda', type: 'carro', price: 45000 },
+  { id: '3', model: 'Volkswagen Gol 2017', plate: 'HTL5B21', year: 2017, status: 'a-venda', type: 'carro', price: 22000 },
+  { id: '4', model: 'Honda Civic 2018', plate: 'GHT9D31', year: 2018, status: 'a-venda', type: 'carro', price: 35000 },
+  { id: '5', model: 'Honda CB 3000', plate: 'FGD2H12', year: 2023, status: 'a-venda', type: 'moto', price: 28000, buyers: 2 },
+  { id: '6', model: 'Yamaha Fazer 2021', plate: 'HJL7K21', year: 2021, status: 'a-venda', type: 'moto', price: 25000, buyers: 2 },
+  { id: '7', model: 'Honda Biz 2020', plate: 'QWE8N20', year: 2020, status: 'a-venda', type: 'moto', price: 18000, buyers: 2 },
+  { id: '8', model: 'Yamaha XTZ 2018', plate: 'BNC6C34', year: 2018, status: 'a-venda', type: 'moto', price: 22000, buyers: 2 },
 ]
 
 export default function AVendaPage() {

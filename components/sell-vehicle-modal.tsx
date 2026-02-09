@@ -9,7 +9,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog'
-import { Vehicle } from './vehicle-card'
+import type { Vehicle } from './vehicle-card'
 
 interface SellVehicleModalProps {
   vehicle: Vehicle
