@@ -1,10 +1,13 @@
+import { useState } from 'react'
 import { AppSidebar } from '@/components/app-sidebar'
 import { VehicleCard, type Vehicle } from '@/components/vehicle-card'
+import { SellVehicleModal } from '@/components/sell-vehicle-modal'
+import { AddVehicleModal } from '@/components/add-vehicle-modal'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { Avatar, AvatarFallback } from '@/components/ui/avatar'
 import { Search, Plus, SlidersHorizontal, Bell, HelpCircle, ChevronDown, MoreHorizontal, Car, Bike, CheckCircle, Circle } from 'lucide-react'
 
 // Mock data
